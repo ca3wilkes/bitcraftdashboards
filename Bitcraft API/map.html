@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bitcraft World Map Explorer</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: Arial;
+      overflow: hidden;
+    }
+
+    #navbar {
+      background: #222;
+      padding: 10px;
+      display: flex;
+      gap: 20px;
+      border-bottom: 1px solid #444;
+    }
+
+    #navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #mapContainer {
+      width: 100vw;
+      height: calc(100vh - 50px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      image-rendering: pixelated;
+      cursor: grab;
+    }
+
+    canvas:active {
+      cursor: grabbing;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="navbar">
+    <a href="index.html">← Back to Dashboard</a>
+    <span>Bitcraft World Map Explorer</span>
+  </div>
+
+  <div id="mapContainer">
+    <canvas id="worldCanvas"></canvas>
+  </div>
+
+  <script src="js/map.js"></script>
+
+</body>
+</html>
