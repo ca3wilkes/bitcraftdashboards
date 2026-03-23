@@ -9,7 +9,10 @@
       const res = await fetch(`/api/empires?id=${encodeURIComponent(id)}`);
       const data = await res.json();
 
-      loadedPlayers = data;
+      const conatiner = document.getElementById("empireName");
+      container.textContent = data.name ? `Empire: ${data.empire.name}` : "Empire ID: " +empireId;
+
+      loadedPlayers = data.members;
       expandedPlayers = new Set();
       renderPlayers(data.members);
     }
@@ -35,9 +38,6 @@
     function renderPlayers(players) {
       const container = document.getElementById("output");
       container.innerHTML = "";
-
-      players.name = players.name? players.name : "Empire Name Not Found";
-      container.appendChild(document.createElement("h1")).textContent = players.name;
 
       players.forEach(player => {
         const div = document.createElement("div");
