@@ -17,9 +17,9 @@
     
     window.onload = async () => {
     const params = new URLSearchParams(window.location.search);
-    const empireIdInput = params.get("empireId");
+    const empireIdInput = params.get("empireId") || lastEmpireId;
 
-    if (empireIdInput){
+    if (empireIdInput) {
       const res = await fetch(`/api/empires?id=${encodeURIComponent(empireIdInput)}`);
       const data = await res.json();
       const container = document.getElementById("empireName");
