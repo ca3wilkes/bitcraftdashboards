@@ -25,11 +25,6 @@ export default async function handler(req, res) {
       return level;
     }
 
-    function getEmpireName(empireId) {
-      const empireName = empireData.name? empireData.name : `Empire ${empireId}`;
-      return empireName;
-    }
-
     const results = await Promise.all(
       empireData.members.map(async (member) => {
         const playerRes = await fetch(`https://bitjita.com/api/players/${member.entityId}`);
@@ -104,7 +99,7 @@ export default async function handler(req, res) {
 
     const empireInfo = {
       id:  empireData.id,
-      name: getEmpireName(empireData.id)
+      name: empireData.name
     }
 
     res.status(200).json({
