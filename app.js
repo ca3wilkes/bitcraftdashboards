@@ -34,7 +34,7 @@
 
     function renderPlayers(players) {
       const container = document.getElementById("output");
-      container.innerHTML = "";
+      container.innerHTML = "<p>Title</p>";
 
       players.forEach(player => {
         const div = document.createElement("div");
@@ -47,7 +47,6 @@
           const needed = skill.next_level_xp ? (skill.next_level_xp - skill.quantity) : 0;
 
           return `
-          <p>This is a title</p>
           <tr>
             <td>${skill.icon} ${skill.skill_name}</td>
             <td>${skill.quantity.toLocaleString()}</td>
