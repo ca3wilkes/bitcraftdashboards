@@ -25,6 +25,11 @@ export default async function handler(req, res) {
       return level;
     }
 
+    function getEmpireName(empireId) {
+      const empireName = empireData.name ? empireData.name : `Empire ${empireId}`;
+      return empireName;
+    }
+
     const results = await Promise.all(
       empireData.members.map(async (member) => {
         const playerRes = await fetch(`https://bitjita.com/api/players/${member.entityId}`);
@@ -38,6 +43,7 @@ export default async function handler(req, res) {
 
         const mappedExperience = experience
           .map(e => {
+            // Removes any and hexite gathering.
             if (e.skill_id === 1 || e.skill_id === 22) return null;
 
             const skill = skillMap[e.skill_id] || {};
