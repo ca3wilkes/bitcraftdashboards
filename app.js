@@ -2,7 +2,7 @@
     let sortState = {};
     let expandedPlayers = new Set();
 
-    window.onload = () => {
+    window.onload = async () => {
     const params = new URLSearchParams(window.location.search);
     const empireIdInput = params.get("empireId");
     if (empireIdInput){
