@@ -9,7 +9,7 @@
       const res = await fetch(`/api/empires?id=${encodeURIComponent(id)}`);
       const data = await res.json();
 
-      const conatiner = document.getElementById("empireName");
+      const container = document.getElementById("empireName");
       container.textContent = data.name ? `Empire: ${data.empire.name}` : "Empire ID: " +empireId;
 
       loadedPlayers = data.members;
