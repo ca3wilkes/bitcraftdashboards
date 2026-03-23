@@ -23,8 +23,9 @@
       const res = await fetch(`/api/empires?id=${encodeURIComponent(empireIdInput)}`);
       const data = await res.json();
       const container = document.getElementById("empireName");
-
+      
       document.getElementById("empireId").value = empireIdInput;
+      window.localStorage.setItem("lastEmpireId", empireIdInput);
       container.textContent = data.empire.name ? `Empire: ${data.empire.name}` : "Empire ID: " +id;
 
       loadedPlayers = data.members;
@@ -41,8 +42,8 @@
 
       const res = await fetch(`/api/empires?id=${encodeURIComponent(id)}`);
       const data = await res.json();
-
       const container = document.getElementById("empireName");
+      window.localStorage.setItem("lastEmpireId", id);
       container.textContent = data.empire.name ? `Empire: ${data.empire.name}` : "Empire ID: " +id;
 
       loadedPlayers = data.members;
@@ -69,7 +70,6 @@
     }
 
     function renderPlayers(players) {
-      window.localStorage.setItem("lastEmpireId", players.empire.id);
       const container = document.getElementById("output");
       container.innerHTML = "";
 
