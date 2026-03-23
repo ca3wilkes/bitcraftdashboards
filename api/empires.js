@@ -98,8 +98,8 @@ export default async function handler(req, res) {
     results.sort((a, b) => b.totalXP - a.totalXP);
 
     const empireInfo = {
-      id:  empireData.id,
-      name: empireData.name
+      id:  empireData.empire.entityId,
+      name: empireData.empire.name
     }
 
     res.status(200).json({
