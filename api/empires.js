@@ -102,7 +102,15 @@ export default async function handler(req, res) {
 
     results.sort((a, b) => b.totalXP - a.totalXP);
 
-    res.status(200).json(results);
+    const empireInfo = {
+      id:  empireData.id,
+      name: getEmpireName(empireData.id)
+    }
+
+    res.status(200).json({
+      empire: empireInfo,
+      members: results
+    });
 
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch data" });
