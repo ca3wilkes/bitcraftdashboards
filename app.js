@@ -2,16 +2,38 @@
     let sortState = {};
     let expandedPlayers = new Set();
 
+    window.onload = async () => {
+    const params = new URLSearchParams(window.location.search);
+    const empireIdInput = params.get("empireId");
+    if (empireIdInput){
+      
+      const res = await fetch(`/api/empires?id=${encodeURIComponent(empireIdInput)}`);
+      const data = await res.json();
+
+      const container = document.getElementById("empireName");
+      container.textContent = data.empire.name ? `Empire: ${data.empire.name}` : "Empire ID: " +id;
+
+      loadedPlayers = data.members;
+      expandedPlayers = new Set();
+      renderPlayers(data.members);
+
+      }
+    }
+
     async function loadMembers() {
+
       const id = document.getElementById("empireId").value.trim();
       if (!id) return alert("Enter an empire ID");
 
       const res = await fetch(`/api/empires?id=${encodeURIComponent(id)}`);
       const data = await res.json();
 
-      loadedPlayers = data;
+      const container = document.getElementById("empireName");
+      container.textContent = data.empire.name ? `Empire: ${data.empire.name}` : "Empire ID: " +id;
+
+      loadedPlayers = data.members;
       expandedPlayers = new Set();
-      renderPlayers(data);
+      renderPlayers(data.members);
     }
 
     async function refreshData() {

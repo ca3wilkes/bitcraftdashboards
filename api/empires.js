@@ -38,6 +38,7 @@ export default async function handler(req, res) {
 
         const mappedExperience = experience
           .map(e => {
+            // Removes any and hexite gathering.
             if (e.skill_id === 1 || e.skill_id === 22) return null;
 
             const skill = skillMap[e.skill_id] || {};
@@ -96,7 +97,15 @@ export default async function handler(req, res) {
 
     results.sort((a, b) => b.totalXP - a.totalXP);
 
-    res.status(200).json(results);
+    const empireInfo = {
+      id:  empireData.empire.entityId,
+      name: empireData.empire.name
+    }
+
+    res.status(200).json({
+      empire: empireInfo,
+      members: results
+    });
 
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch data" });
