@@ -11,7 +11,7 @@
 
       loadedPlayers = data;
       expandedPlayers = new Set();
-      renderPlayers(data);
+      renderPlayers(data.members);
     }
 
     async function refreshData() {
