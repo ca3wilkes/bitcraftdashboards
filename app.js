@@ -10,7 +10,7 @@
       const data = await res.json();
 
       const container = document.getElementById("empireName");
-      container.textContent = data.name ? `Empire: ${data.empire.name}` : "Empire ID: " +empireId;
+      container.textContent = data.empire.name ? `Empire: ${data.empire.name}` : "Empire ID: " +id;
 
       loadedPlayers = data.members;
       expandedPlayers = new Set();
