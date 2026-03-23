@@ -26,7 +26,7 @@ export default async function handler(req, res) {
     }
 
     function getEmpireName(empireId) {
-      const empireName = empireData.name ? empireData.name : `Empire ${empireId}`;
+      const empireName = empireData.name? empireData.name : `Empire ${empireId}`;
       return empireName;
     }
 
