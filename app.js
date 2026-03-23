@@ -2,6 +2,13 @@
     let sortState = {};
     let expandedPlayers = new Set();
 
+    window.onload = () => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("empireId")){ 
+      loadMembers(params.get("empireId"));
+      }
+    }
+
     async function loadMembers() {
       const id = document.getElementById("empireId").value.trim();
       if (!id) return alert("Enter an empire ID");
