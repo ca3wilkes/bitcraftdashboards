@@ -1,7 +1,15 @@
     let loadedPlayers = [];
     let sortState = {};
     let expandedPlayers = new Set();
-
+    
+    // Check for dark mode preference on load
+    const theme = window.localStorage.darkMode;
+    const checkbox = document.querySelector(".switch input");
+    if (theme === "true"){
+      document.body.classList.toggle("dark");
+      checkbox.checked = true;
+    } 
+    
     window.onload = async () => {
     const params = new URLSearchParams(window.location.search);
     const empireIdInput = params.get("empireId");
@@ -218,6 +226,7 @@
 
     function toggleDarkMode() {
       document.body.classList.toggle("dark");
+      window.localStorage.setItem("darkMode", document.body.classList.contains("dark"));
     }
 
     function enableColumnResizing() {
