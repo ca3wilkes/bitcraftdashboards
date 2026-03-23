@@ -1,6 +1,7 @@
     let loadedPlayers = [];
     let sortState = {};
     let expandedPlayers = new Set();
+    localStorage.setItem("darkMode", localStorage.getItem("darkMode") || "false");
 
     window.onload = async () => {
     const params = new URLSearchParams(window.location.search);
@@ -218,6 +219,7 @@
 
     function toggleDarkMode() {
       document.body.classList.toggle("dark");
+      localstorage.setItem("darkMode", document.body.classList.contains("dark"));
     }
 
     function enableColumnResizing() {
