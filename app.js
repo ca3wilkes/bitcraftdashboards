@@ -219,7 +219,7 @@
 
     function toggleDarkMode() {
       document.body.classList.toggle("dark");
-      localstorage.setItem("darkMode", document.body.classList.contains("dark"));
+      localstorage.darkMode = document.body.classList.contains("dark");
     }
 
     function enableColumnResizing() {
