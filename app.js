@@ -37,7 +37,7 @@
       container.innerHTML = "";
 
       players.name = players.name || "Empire ID: " + document.getElementById("empireId").value.trim();
-      container.innerHTML.appendChild(document.createElement("h1")).textContent = players.name;
+      container.appendChild(document.createElement("h1")).textContent = players.name;
 
       players.forEach(player => {
         const div = document.createElement("div");
