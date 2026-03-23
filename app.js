@@ -1,8 +1,14 @@
     let loadedPlayers = [];
     let sortState = {};
     let expandedPlayers = new Set();
+    
+    // Check for dark mode preference on load
     const theme = window.localStorage.darkMode;
-    if (theme === "true") document.body.classList.toggle("dark");
+    const checkbox = document.querySelector(".switch input");
+    if (theme === "true"){
+      document.body.classList.toggle("dark");
+      checkbox.checked = true;
+    } 
     
     window.onload = async () => {
     const params = new URLSearchParams(window.location.search);
