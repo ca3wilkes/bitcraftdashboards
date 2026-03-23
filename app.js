@@ -36,7 +36,7 @@
       const container = document.getElementById("output");
       container.innerHTML = "";
 
-      players.name = players.name || "Empire ID: " + document.getElementById("empireId").value.trim();
+      players.name = players.name? players.name : "Empire Name Not Found";
       container.appendChild(document.createElement("h1")).textContent = players.name;
 
       players.forEach(player => {
