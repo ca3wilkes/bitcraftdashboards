@@ -2,8 +2,13 @@
     let sortState = {};
     let expandedPlayers = new Set();
     
-    // Check for dark mode preference on load
+    // Check for previous empire ID and darkmode preference on load
     const theme = window.localStorage.darkMode;
+    const lastEmpireId = window.localStorage.lastEmpireId;
+
+    if (lastEmpireId) {
+      document.getElementById("empireId").value = lastEmpireId;
+    }
     const checkbox = document.querySelector(".switch input");
     if (theme === "true"){
       document.body.classList.toggle("dark");
@@ -13,12 +18,13 @@
     window.onload = async () => {
     const params = new URLSearchParams(window.location.search);
     const empireIdInput = params.get("empireId");
+
     if (empireIdInput){
-      
       const res = await fetch(`/api/empires?id=${encodeURIComponent(empireIdInput)}`);
       const data = await res.json();
-
       const container = document.getElementById("empireName");
+
+      document.getElementById("empireId").value = empireIdInput;
       container.textContent = data.empire.name ? `Empire: ${data.empire.name}` : "Empire ID: " +id;
 
       loadedPlayers = data.members;
@@ -63,6 +69,7 @@
     }
 
     function renderPlayers(players) {
+      window.localStorage.setItem("lastEmpireId", players.empire.id);
       const container = document.getElementById("output");
       container.innerHTML = "";
 
