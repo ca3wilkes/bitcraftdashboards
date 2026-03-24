@@ -12,6 +12,21 @@
   --btn-hover: #d5d5d5;
 }
 
+.dark a {
+  color: #80cfff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.dark a:hover,
+.dark a:focus {
+  color: #c0eaff;
+}
+
+.dark a:active {
+  color: #a0d4ff;
+}
+
 .dark {
   --bg: #1e1e1e;
   --text: #e0e0e0;
