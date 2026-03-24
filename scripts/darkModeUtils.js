@@ -23,3 +23,9 @@ function toggleDarkMode() {
 function saveDarkMode(mode) {
   window.localStorage.setItem("darkMode", mode);
 }
+
+window.onload = () => {
+  setTimeout(() => {
+    document.body.classList.add('loaded');
+  }, 50); // 50ms delay
+};
