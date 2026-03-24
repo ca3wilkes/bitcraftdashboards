@@ -1,265 +1,269 @@
 :root {
-      --bg: #f7f7f7;
-      --text: #222;
-      --card: white;
-      --border: #ccc;
-      --progress-bg: #ddd;
-      --progress-fill: #4caf50;
-      --progress-text: #000;
+  --bg: #f7f7f7;
+  --text: #222;
+  --card: white;
+  --border: #ccc;
+  --progress-bg: #ddd;
+  --progress-fill: #4caf50;
+  --progress-text: #000;
 
-      --btn-bg: #e0e0e0;
-      --btn-text: #222;
-      --btn-hover: #d5d5d5;
-    }
+  --btn-bg: #e0e0e0;
+  --btn-text: #222;
+  --btn-hover: #d5d5d5;
+}
 
-    .dark {
-      --bg: #1e1e1e;
-      --text: #e0e0e0;
-      --card: #2a2a2a;
-      --border: #444;
-      --progress-bg: #333;
-      --progress-fill: #76ff76;
-      --progress-text: #fff;
+.dark {
+  --bg: #1e1e1e;
+  --text: #e0e0e0;
+  --card: #2a2a2a;
+  --border: #444;
+  --progress-bg: #333;
+  --progress-fill: #76ff76;
+  --progress-text: #fff;
 
-      --btn-bg: #3a3a3a;
-      --btn-text: #eee;
-      --btn-hover: #4a4a4a;
-    }
+  --btn-bg: #3a3a3a;
+  --btn-text: #eee;
+  --btn-hover: #4a4a4a;
+}
 
-    body {
-      font-family: Arial;
-      padding: 20px;
-      background: var(--bg);
-      color: var(--text);
-    }
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: var(--bg);
+  color: var(--text);
+}
 
-    body.loaded {
-      transition: 0.3s;
-    }
+body.loaded {
+  transition: 0.3s;
+}
 
-    .player {
-      background: var(--card);
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-    }
+.player {
+  background: var(--card);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
 
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      user-select: none;
-    }
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
 
-    .expand-btn {
-      background: var(--btn-bg);
-      color: var(--btn-text);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 6px 14px;
-      cursor: pointer;
-      margin-right: 12px;
-      font-size: 14px;
-      transition: background 0.2s;
-    }
+.expand-btn {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 14px;
+  cursor: pointer;
+  margin-right: 12px;
+  font-size: 14px;
+  transition: background 0.2s;
+}
 
-    .expand-btn:hover {
-      background: var(--btn-hover);
-    }
+.expand-btn:hover {
+  background: var(--btn-hover);
+}
 
-    .expand-btn span {
-      display: inline-block;
-      transition: transform 0.2s ease;
-    }
+.expand-btn span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
 
-    .expanded .expand-btn span {
-      transform: rotate(90deg);
-    }
+.expanded .expand-btn span {
+  transform: rotate(90deg);
+}
 
-    .skills {
-      display: none;
-      margin-top: 15px;
-    }
+.skills {
+  display: none;
+  margin-top: 15px;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      table-layout: fixed;
-    }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
 
-    th, td {
-      padding: 8px;
-      border-bottom: 1px solid var(--border);
-      overflow: visible !important;
-      position: relative;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  overflow: visible !important;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
-    th {
-      background: var(--border);
-      cursor: pointer;
-      position: relative;
-      user-select: none;
-    }
+th {
+  background: var(--border);
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
 
-    thead th {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-    }
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
 
-    .sort-arrow {
-      margin-left: 6px;
-      font-size: 12px;
-      opacity: 0.7;
-    }
+.sort-arrow {
+  margin-left: 6px;
+  font-size: 12px;
+  opacity: 0.7;
+}
 
-    .resize-handle {
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 10px;
-      height: 100%;
-      cursor: col-resize;
-      background: rgba(0,0,0,0.15);
-      transition: background 0.2s;
-    }
+.resize-handle {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  cursor: col-resize;
+  background: rgba(0, 0, 0, 0.15);
+  transition: background 0.2s;
+}
 
-    .dark .resize-handle {
-      background: rgba(255,255,255,0.2);
-    }
+.dark .resize-handle {
+  background: rgba(255, 255, 255, 0.2);
+}
 
-    .resize-handle:hover {
-      background: #2196f3;
-    }
+.resize-handle:hover {
+  background: #2196f3;
+}
 
-    .progress {
-      width: 100%;
-      height: 16px;
-      background: var(--progress-bg);
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      position: relative;
-    }
+.progress {
+  width: 100%;
+  height: 16px;
+  background: var(--progress-bg);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  position: relative;
+}
 
-    .progress-bar {
-      height: 100%;
-      background: var(--progress-fill);
-      display: block;
-      min-width: 1px;
-      transition: width 0.4s ease;
-    }
+.progress-bar {
+  height: 100%;
+  background: var(--progress-fill);
+  display: block;
+  min-width: 1px;
+  transition: width 0.4s ease;
+}
 
-    .progress-text {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 11px;
-      font-weight: bold;
-      color: var(--progress-text);
-      pointer-events: none;
-      line-height: 16px;
-    }
+.progress-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: bold;
+  color: var(--progress-text);
+  pointer-events: none;
+  line-height: 16px;
+}
 
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      width: 100%;
-      overflow: visible;
-    }
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  overflow: visible;
+}
 
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 240px;
-      background-color: var(--card);
-      color: var(--text);
-      text-align: left;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      padding: 10px;
-      position: absolute;
-      z-index: 9999;
-      bottom: 140%;
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-size: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-      white-space: normal;
-    }
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 240px;
+  background-color: var(--card);
+  color: var(--text);
+  text-align: left;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  padding: 10px;
+  position: absolute;
+  z-index: 9999;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  white-space: normal;
+}
 
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 
-    #searchBox {
-      padding: 8px;
-      width: 250px;
-      margin: 20px 0;
-      background: var(--card);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
+#searchBox {
+  padding: 8px;
+  width: 250px;
+  margin: 20px 0;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
 
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 50px;
-      height: 26px;
-      margin-left: 20px;
-    }
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin-left: 20px;
+}
 
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: #ccc;
-      transition: .4s;
-      border-radius: 26px;
-    }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 26px;
+}
 
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 20px;
-      width: 20px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      transition: .4s;
-      border-radius: 50%;
-    }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
 
-    .switch input:checked + .slider {
-      background-color: #4caf50;
-    }
+.switch input:checked+.slider {
+  background-color: #4caf50;
+}
 
-    .switch input:checked + .slider:before {
-      transform: translateX(24px);
-    }
+.switch input:checked+.slider:before {
+  transform: translateX(24px);
+}
 
-    #refreshBtn {
-      margin-left: 10px;
-      padding: 8px 12px;
-      background: #4caf50;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+#refreshBtn {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-    #refreshBtn:hover {
-      background: #43a047;
-    }
+#refreshBtn:hover {
+  background: #43a047;
+}
