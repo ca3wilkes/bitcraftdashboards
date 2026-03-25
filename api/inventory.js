@@ -8,7 +8,6 @@ export default async function handler(req, res) {
   try {
     const invetoryRes = await fetch(`https://bitjita.com/api/players/${id}/inventories`);
     const inventoryData  = await invetoryRes.json();
-
     const inventoryObjects = inventoryData.inventories;
 
     const mappedInven = inventoryObjects.map(inv => ({
@@ -21,10 +20,7 @@ export default async function handler(req, res) {
     }))
 }));
 
-
-    
-
-    results = mappedInven;
+  const  results = mappedInven;
 
     if (!mappedInven) {
       return res.status(404).json({ error: "Player not found." });
