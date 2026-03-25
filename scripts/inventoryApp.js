@@ -4,8 +4,8 @@
     function LoadInventory(){
 
         const id = document.getElementById('playerId').value;
-        const res = fetch(`/api/inventory/?id=${encodeURIComponent(id)}`);
-        const data = res.json();
+        const res = await fetch(`/api/inventory/?id=${encodeURIComponent(id)}`);
+        const data = await res.json();
 
         
     }
