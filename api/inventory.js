@@ -9,30 +9,30 @@ export default async function handler(req, res) {
     const invetoryRes = await fetch(`https://bitjita.com/api/players/${id}/inventories`);
     const inventoryData  = await invetoryRes.json();
 
-    const inventoryObjects = inventoryData.inventories || [];
+//     const inventoryObjects = inventoryData.inventories || [];
 
-    const mappedInventories = inventoryObjects.filter(inv => inv.inventoryName.includes("Personal Cache")).map(inv => ({
+//     const mappedInventories = inventoryObjects.filter(inv => inv.inventoryName.includes("Personal Cache")).map(inv => ({
          
-            return: {
-                entityId: inv.entityId,
-                inventoryName: inv.inventoryName,
-                itemCollection: inv.pockets.contents.map(contents => ({
-                    itemId: contents.itemId,
-                    quantity: contents.quantity
-            })
-        )}
+//             return: {
+//                 entityId: inv.entityId,
+//                 inventoryName: inv.inventoryName,
+//                 itemCollection: inv.pockets.contents.map(contents => ({
+//                     itemId: contents.itemId,
+//                     quantity: contents.quantity
+//             })
+//         )}
         
     
-  }));
+//   }));
 
-    if (!mappedInventories) {
-      return res.status(404).json({ error: "Player not found." });
-    }
+//     if (!mappedInventories) {
+//       return res.status(404).json({ error: "Player not found." });
+//     }
 
-    results = mappedInventories;
+//     results = mappedInventories;
 
     res.status(200).json({
-      results
+        inventory: inventoryData.inventories || []
     });
 
   } catch (err) {
