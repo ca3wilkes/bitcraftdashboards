@@ -10,7 +10,7 @@
         
       loadedInventory = data;
       expandedPlayers = new Set();
-      renderPlayers(loadedInventory);
+      renderInventories(loadedInventory);
     }
     
 
