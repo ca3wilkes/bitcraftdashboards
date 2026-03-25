@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     const invetoryRes = await fetch(`https://bitjita.com/api/players/${id}/inventories`);
     const inventoryData  = await invetoryRes.json();
 
-    const inventoryObjects = inventoryData.inventories || [];
+    const inventoryObjects = inventoryData.inventories;
 
     const mappedInven = inventoryObjects.inventories.map(inv =>({
     id: inv.entityId,
