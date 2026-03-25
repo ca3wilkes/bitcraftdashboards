@@ -11,25 +11,25 @@ export default async function handler(req, res) {
 
     const inventoryObjects = inventoryData.inventories || [];
 
-    const mappedInven = inventoryObjects.inventories.map(inv =>({
-    id: inv.entityId,
-    name: inv.inventoryName,
-    itemCollection: inv.pockets.map(pockets =>({
-      itemid: pockets.contents.itemId,
-      itemInfo: inventoryData.items[pockets.contents.itemId],
-      quantit: pockets.contents.quantity
-    }))
-}));
+//     const mappedInven = inventoryObjects.inventories.map(inv =>({
+//     id: inv.entityId,
+//     name: inv.inventoryName,
+//     itemCollection: inv.pockets.map(pockets =>({
+//       itemid: pockets.contents.itemId,
+//       itemInfo: inventoryData.items[pockets.contents.itemId],
+//       quantit: pockets.contents.quantity
+//     }))
+// }));
 
 
-    if (!mappedInven) {
-      return res.status(404).json({ error: "Player not found." });
-    }
+//     if (!mappedInven) {
+//       return res.status(404).json({ error: "Player not found." });
+//     }
 
-    results = mappedInven;
+//     results = mappedInven;
 
     res.status(200).json({
-        inventories: results
+        inventories: inventoryData
     });
 
   } catch (err) {
