@@ -16,7 +16,7 @@ export default async function handler(req, res) {
     name: inv.inventoryName,
     itemCollection: inv.pockets.map(pockets =>({
       itemid: pockets.contents.itemId,
-      itemInfo: object.items[pockets.contents.itemId],
+      itemInfo: inventoryData.items[pockets.contents.itemId],
       quantit: pockets.contents.quantity
     }))
 }));
