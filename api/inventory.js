@@ -30,7 +30,7 @@ export default async function handler(req, res) {
     results = mappedInven;
 
     res.status(200).json({
-        inventories: inventoryData
+        inventories: results
     });
 
   } catch (err) {
