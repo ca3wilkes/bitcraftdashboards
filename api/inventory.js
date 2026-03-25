@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
     const inventoryObjects = inventoryData.inventories;
 
-    const mappedInven = inventoryObjects.inventories.map(inv => ({
+    const mappedInven = inventoryObjects.map(inv => ({
     id: inv.entityId,
     name: inv.inventoryName,
     itemCollection: inv.pockets.map(pockets =>({
@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     }
 
     res.status(200).json({
-        inventories: results
+        mappedInven
     });
 
   } catch (err) {
