@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     name: inv.inventoryName,
     itemCollection: inv.pockets.map(pockets =>({
       itemid: pockets.contents.itemId,
-      itemInfo: inventoryData.items[pockets.contents.itemId] || inventoryData.cargos[pockets.contents.itemId] || null,
+      itemInfo: pockets.itemtype == 0? inventoryData.items[pockets.contents.itemId] : inventoryData.cargos[pockets.contents.itemId],
       quantit: pockets.contents.quantity
     }))
 }));
