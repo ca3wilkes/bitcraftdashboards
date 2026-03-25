@@ -28,7 +28,7 @@ export default async function handler(req, res) {
 
     results = mappedInventories;
 
-    res.status(200).json({
+    res.json({
         inventories: results
     });
 
