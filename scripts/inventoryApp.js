@@ -10,7 +10,7 @@
         
       loadedInventory = data;
       expandedPlayers = new Set();
-      renderInventories(loadedInventory);
+      renderInventories(loadedInventory.mappedInven);
     }
     
 
