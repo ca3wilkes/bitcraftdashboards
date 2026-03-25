@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Empire Dashboard</title>
+
+    <link rel="stylesheet" href="default.css">
+</head>
+
+<body>
+    <div>
+        <a href="/"> Home </a>
+        <a href="/personalCache.html"> About </a>
+    </div>
+    <h1>Empire Dashboard</h1>
+
+    <input id="playerId" placeholder="Enter Player ID">
+    <button onclick="LoadInventory()">Load</button>
+    <button id="refreshBtn" onclick="refreshData()">Refresh</button>
+
+    <label class="switch">
+        <input type="checkbox" onchange="toggleDarkMode()">
+        <span class="slider"></span>
+    </label>
+    <span style="margin-left:10px;">Dark Mode</span>
+
+    <br><br>
+
+
+
+    <script src="scripts/dashboardApp.js">
+    </script>
+    <script src="scripts/inventoryApp.js">
+    </script>
+
+
+</body>
+
+</html>
