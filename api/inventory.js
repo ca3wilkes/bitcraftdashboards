@@ -22,9 +22,9 @@ export default async function handler(req, res) {
 // }));
 
 
-    if (!mappedInven) {
-      return res.status(404).json({ error: "Player not found." });
-    }
+    // if (!mappedInven) {
+    //   return res.status(404).json({ error: "Player not found." });
+    // }
 
     //results = mappedInven;
 
